@@ -1,5 +1,6 @@
 import cv2 #Main Library
-
+import numpy as np  # means matrix folder
+from os import walk#For find the folder we are using this
 
 def Find_Strawberry(camera_percent):  # General function we will call this function in main folder.
     # We are creating the function with 'def'
