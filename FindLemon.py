@@ -16,9 +16,7 @@ def Find_Strawberry(camera_percent):  # General function we will call this funct
         return cv2.resize(display, dimension, interpolation=cv2.INTER_AREA)  # we have to use this library for all
 
     # size chancing
-
     while True:  # we enter the infinitive loop
-
         if openTheCamera.isOpened():  # security for coming respond from camera
             ret, display = openTheCamera.read()
 
