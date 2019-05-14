@@ -28,7 +28,7 @@ def Find_Strawberry(camera_percent):# General function we will call this functio
             convertToGray = cv2.cvtColor(display, cv2.COLOR_BGR2GRAY)
 
             for dirpath, dirnames, filenames in walk(
-                    'image_folder'):  # we are taking folder directly in source code folder
+                    'limon'):  # we are taking folder directly in source code folder
 
                 for size in filenames:  # in python we are looping with elemans so it will give directly eleman names.
                     # such as strawberry3.jpg
@@ -38,10 +38,10 @@ def Find_Strawberry(camera_percent):# General function we will call this functio
 
                     widthOfObject, heigthOfObject = takenPicture.shape
 
-                    if widthOfObject > 300 or widthOfObject < 350 or heigthOfObject > 300 or heigthOfObject < 350:
+                    if widthOfObject > 500 or widthOfObject < 400 or heigthOfObject > 500 or heigthOfObject < 600:
                         # We have to apply this if condition because sometimes the picture bigger than camera so
                         # We have to small this picture side
-                        takenPicture = cv2.resize(takenPicture, (280, 320), interpolation=cv2.INTER_AREA)
+                        takenPicture = cv2.resize(takenPicture, (450, 500), interpolation=cv2.INTER_AREA)
                         widthOfObject, heigthOfObject = takenPicture.shape
 
                     else:
@@ -61,7 +61,7 @@ def Find_Strawberry(camera_percent):# General function we will call this functio
                         accuracyRate = str(res * 100)  # We try give accuracy percent . But I am not sure right result.
                         accuracyRate = accuracyRate.replace('[', '').replace(']', '')
                         # In the result give some bracket and undesirable string so we delete that
-                        Write = 'StrawBerry' + accuracyRate
+                        Write = 'Lemon' + accuracyRate
                         # For strawberry we want show this name and accuracy rate
                         cv2.putText(display, Write, (parameter[0], parameter[1]),
                                     cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 1)
