@@ -1,7 +1,7 @@
 import cv2  # Main Library
 import numpy as np  # means matrix folder
 from os import walk  # For find the folder we are using this
-
+from os.path import join
 
 def Find_Fruits(camera_percent):  # General function we will call this function in main folder.
     # We are creating the function with 'def'
@@ -42,10 +42,10 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
 
                         widthOfObject, heigthOfObject = takenPicture.shape
 
-                        if widthOfObject > 300 or widthOfObject < 350 or heigthOfObject > 300 or heigthOfObject < 350:
+                        if widthOfObject > 200 or widthOfObject < 80 or heigthOfObject > 200 or heigthOfObject < 80:
                             # We have to apply this if condition because sometimes the picture bigger than camera so
                             # We have to small this picture side
-                            takenPicture = cv2.resize(takenPicture, (280, 340), interpolation=cv2.INTER_AREA)
+                            takenPicture = cv2.resize(takenPicture, (120, 110), interpolation=cv2.INTER_AREA)
                             widthOfObject, heigthOfObject = takenPicture.shape
 
                         else:
@@ -55,7 +55,7 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                                                 cv2.TM_CCOEFF_NORMED)  # Apply template matching and
                         # normally , we have 6 template matching and we decision to this.
 
-                        proficiencyOfValue = 0.8  # threshold value we can change
+                        proficiencyOfValue = 0.7  # threshold value we can change
                         localCompareValue = np.where(res > proficiencyOfValue)
                         # We are comparing the constant value and chancable values
                         # According to this matching result, we decide the acceptable or not
@@ -80,16 +80,16 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
 
                 for size in filenames:  # in python we are looping with elemans so it will give directly eleman names.
                     # such as lemon1.jpg
-                    takenPicture = cv2.imread('{}'.format(size), 0)  # This eleman has to be 'lemon3.jpg'.
+                    takenPicture = cv2.imread('{}'.format(join(dirpath, size)), 0)  # This eleman has to be 'lemon3.jpg'.
                     # So we have to changeto format for all picture
                     # 0 means you make be gray color
 
                     widthOfObject, heigthOfObject = takenPicture.shape
 
-                    if widthOfObject > 300 or widthOfObject < 350 or heigthOfObject > 300 or heigthOfObject < 350:
+                    if widthOfObject > 230 or widthOfObject < 260 or heigthOfObject > 250 or heigthOfObject < 320:
                         # We have to apply this if condition because sometimes the picture bigger than camera so
                         # We have to small this picture side
-                        takenPicture = cv2.resize(takenPicture, (450, 550), interpolation=cv2.INTER_AREA)
+                        takenPicture = cv2.resize(takenPicture, (250, 300), interpolation=cv2.INTER_AREA)
                         widthOfObject, heigthOfObject = takenPicture.shape
 
                     else:
@@ -99,7 +99,7 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                                             cv2.TM_CCOEFF_NORMED)  # Apply template matching and
                     # normally , we have 6 template matching and we decision to this.
 
-                    proficiencyOfValue = 0.8  # threshold value we can change
+                    proficiencyOfValue = 0.7  # threshold value we can change
                     localCompareValue = np.where(res > proficiencyOfValue)
 
                     for parameter in zip(*localCompareValue[::-1]):
@@ -119,16 +119,16 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
 
                 for size in filenames:  # in python we are looping with elemans so it will give directly eleman names.
                     # such as lemon3.jpg
-                    takenPicture = cv2.imread('{}'.format(size), 0)  # This eleman has to be 'lemon3.jpg'.
+                    takenPicture = cv2.imread('{}'.format(join(dirpath, size)), 0)  # This eleman has to be 'lemon3.jpg'.
                     # So we have to changeto format for all picture
                     # 0 means you make be gray color
 
                     widthOfObject, heigthOfObject = takenPicture.shape
 
-                    if widthOfObject > 977 or widthOfObject < 251 or heigthOfObject > 977 or heigthOfObject < 251:
+                    if widthOfObject > 400 or widthOfObject < 410 or heigthOfObject > 100 or heigthOfObject < 150:
                         # We have to apply this if condition because sometimes the picture bigger than camera so
                         # We have to small this picture side
-                        takenPicture = cv2.resize(takenPicture, (280, 320), interpolation=cv2.INTER_AREA)
+                        takenPicture = cv2.resize(takenPicture, (600, 200), interpolation=cv2.INTER_AREA)
                         widthOfObject, heigthOfObject = takenPicture.shape
 
                     else:
@@ -138,7 +138,7 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                                             cv2.TM_CCOEFF_NORMED)  # Apply template matching and
                     # normally , we have 6 template matching and we decision to this.
 
-                    proficiencyOfValue = 0.8  # threshold value we can change
+                    proficiencyOfValue = 0.7  # threshold value we can change
                     localCompareValue = np.where(res > proficiencyOfValue)
 
                     for parameter in zip(*localCompareValue[::-1]):
@@ -160,19 +160,17 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                     'apple'):  # we are taking folder directly in source code folder
 
                 for size in filenames:  # in python we are looping with elemans so it will give directly eleman names.
-                    # such as banana1.jpg
-                    takenPicture = cv2.imread('{}'.format(size),
-                                              0)  # This eleman has to be 'banana3.jpg'.
+                    # such as lemon3.jpg
+                    takenPicture = cv2.imread('{}'.format(size), 0)  # This eleman has to be 'lemon3.jpg'.
                     # So we have to changeto format for all picture
                     # 0 means you make be gray color
 
                     widthOfObject, heigthOfObject = takenPicture.shape
 
-                    if widthOfObject > 977 or widthOfObject < 251 or heigthOfObject > 977 or heigthOfObject < 251:
+                    if widthOfObject > 200 or widthOfObject < 250 or heigthOfObject > 220 or heigthOfObject < 270:
                         # We have to apply this if condition because sometimes the picture bigger than camera so
                         # We have to small this picture side
-                        takenPicture = cv2.resize(takenPicture, (280, 320),
-                                                  interpolation=cv2.INTER_AREA)
+                        takenPicture = cv2.resize(takenPicture, (250, 260), interpolation=cv2.INTER_AREA)
                         widthOfObject, heigthOfObject = takenPicture.shape
 
                     else:
@@ -182,12 +180,12 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                                             cv2.TM_CCOEFF_NORMED)  # Apply template matching and
                     # normally , we have 6 template matching and we decision to this.
 
-                    proficiencyOfValue = 0.8  # threshold value we can change
+                    proficiencyOfValue = 0.7  # threshold value we can change
                     localCompareValue = np.where(res > proficiencyOfValue)
 
                     for parameter in zip(*localCompareValue[::-1]):
-                        cv2.rectangle(display, parameter, (
-                        parameter[0] + heigthOfObject, parameter[1] + widthOfObject),
+                        cv2.rectangle(display, parameter,
+                                      (parameter[0] + heigthOfObject, parameter[1] + widthOfObject),
                                       (0, 255, 0), 2)
 
                         accuracyRate = str(
@@ -195,16 +193,17 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                         accuracyRate = accuracyRate.replace('[', '').replace(']', '')
                         # In the result give some bracket and undesirable string so we delete that
                         Write = 'Apple' + accuracyRate
-                        # For apple we want show this name and accuracy rate
+                        # For banana we want show this name and accuracy rate
                         cv2.putText(display, Write, (parameter[0], parameter[1]),
                                     cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 1)
                     res = []  # We make empty this array
+
 
             new_Display = Camera_Set_Up(display, camera_percent)
             # we create new camera dimension
             cv2.imshow("Display", new_Display)
 
-            if cv2.waitKey(25) & 0xFF == ord('q'):  # per 25 millisecond, take photo
+            if cv2.waitKey(50) & 0xFF == ord('q'):  # per 25 millisecond, take photo
                 break  # when press the 'q' the program will quit
         else:
             ret = False
