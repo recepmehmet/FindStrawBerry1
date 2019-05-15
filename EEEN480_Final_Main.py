@@ -28,15 +28,15 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                                          cv2.COLOR_BGR2GRAY)  # We convert to gray who is coming the camera data
 
             for dirpath, dirnames, filenames in walk(
-                    'strawberry'):  # we are taking folder directly in source code folder
+                    'cherry'):  # we are taking folder directly in source code folder
 
                 for size in filenames:  # in python we are looping with elemans so it will give directly eleman names.
-                    # such as strawberry1.jpg
+                    # such as cherry1.jpg
                     if size == filenames[len(filenames)-1]:
                         break
                     else:
                         print(size)
-                        takenPicture = cv2.imread('{}'.format(size), 0)  # This eleman has to be 'strawberry3.jpg'.
+                        takenPicture = cv2.imread('{}'.format(size), 0)  # This eleman has to be 'cherry3.jpg'.
                         # So we have to change to format for all picture
                         # 0 means you make be gray color
 
@@ -69,8 +69,8 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                                     res * 100)  # We try give accuracy percent . But I am not sure right result.
                                 accuracyRate = accuracyRate.replace('[', '').replace(']', '')
                                 # In the result give some bracket and undesirable string so we delete that
-                                Write = 'StrawBerry' + accuracyRate
-                                # For strawberry we want show this name and accuracy rate
+                                Write = 'Cherry' + accuracyRate
+                                # For cherry we want show this name and accuracy rate
                                 cv2.putText(display, Write, (parameter[0], parameter[1]),
                                             cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 1)
                             res = []  # We make empty this array
@@ -79,8 +79,8 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                     'lemon'):  # we are taking folder directly in source code folder
 
                 for size in filenames:  # in python we are looping with elemans so it will give directly eleman names.
-                    # such as strawberry3.jpg
-                    takenPicture = cv2.imread('{}'.format(size), 0)  # This eleman has to be 'strawberry3.jpg'.
+                    # such as lemon1.jpg
+                    takenPicture = cv2.imread('{}'.format(size), 0)  # This eleman has to be 'lemon3.jpg'.
                     # So we have to changeto format for all picture
                     # 0 means you make be gray color
 
@@ -110,7 +110,7 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                         accuracyRate = accuracyRate.replace('[', '').replace(']', '')
                         # In the result give some bracket and undesirable string so we delete that
                         Write = 'Lemon' + accuracyRate
-                        # For strawberry we want show this name and accuracy rate
+                        # For lemon we want show this name and accuracy rate
                         cv2.putText(display, Write, (parameter[0], parameter[1]),
                                     cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 1)
                     res = []  # We make empty this array
@@ -118,8 +118,8 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                     'banana'):  # we are taking folder directly in source code folder
 
                 for size in filenames:  # in python we are looping with elemans so it will give directly eleman names.
-                    # such as strawberry3.jpg
-                    takenPicture = cv2.imread('{}'.format(size), 0)  # This eleman has to be 'strawberry3.jpg'.
+                    # such as lemon3.jpg
+                    takenPicture = cv2.imread('{}'.format(size), 0)  # This eleman has to be 'lemon3.jpg'.
                     # So we have to changeto format for all picture
                     # 0 means you make be gray color
 
@@ -151,7 +151,7 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                         accuracyRate = accuracyRate.replace('[', '').replace(']', '')
                         # In the result give some bracket and undesirable string so we delete that
                         Write = 'Banana' + accuracyRate
-                        # For strawberry we want show this name and accuracy rate
+                        # For banana we want show this name and accuracy rate
                         cv2.putText(display, Write, (parameter[0], parameter[1]),
                                     cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 1)
                     res = []  # We make empty this array
@@ -160,9 +160,9 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                     'apple'):  # we are taking folder directly in source code folder
 
                 for size in filenames:  # in python we are looping with elemans so it will give directly eleman names.
-                    # such as strawberry3.jpg
+                    # such as banana1.jpg
                     takenPicture = cv2.imread('{}'.format(size),
-                                              0)  # This eleman has to be 'strawberry3.jpg'.
+                                              0)  # This eleman has to be 'banana3.jpg'.
                     # So we have to changeto format for all picture
                     # 0 means you make be gray color
 
@@ -195,7 +195,7 @@ def Find_Fruits(camera_percent):  # General function we will call this function 
                         accuracyRate = accuracyRate.replace('[', '').replace(']', '')
                         # In the result give some bracket and undesirable string so we delete that
                         Write = 'Apple' + accuracyRate
-                        # For strawberry we want show this name and accuracy rate
+                        # For apple we want show this name and accuracy rate
                         cv2.putText(display, Write, (parameter[0], parameter[1]),
                                     cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 1)
                     res = []  # We make empty this array
